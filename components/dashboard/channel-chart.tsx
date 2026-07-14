@@ -26,7 +26,7 @@ import {
   channelPeriodLabels,
   type ChannelDatum,
   type ChannelPeriod,
-} from "@/lib/dashboard-queries"
+} from "@/lib/dashboard-types"
 
 const chartConfig = {
   visitors: {
