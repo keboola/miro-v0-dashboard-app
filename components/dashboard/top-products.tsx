@@ -6,14 +6,9 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-const products = [
-  { name: "Pro Subscription", sales: 1280, share: 92 },
-  { name: "Team Plan", sales: 860, share: 64 },
-  { name: "Starter Kit", sales: 540, share: 41 },
-  { name: "Add-on Pack", sales: 310, share: 23 },
-]
+type Product = { name: string; sales: number; share: number }
 
-export function TopProducts() {
+export function TopProducts({ products }: { products: Product[] }) {
   return (
     <Card>
       <CardHeader>
