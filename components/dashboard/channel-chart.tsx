@@ -23,10 +23,10 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import {
-  channelDataByPeriod,
   channelPeriodLabels,
+  type ChannelDatum,
   type ChannelPeriod,
-} from "@/lib/dashboard-data"
+} from "@/lib/dashboard-types"
 
 const chartConfig = {
   visitors: {
@@ -35,7 +35,11 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function ChannelChart() {
+export function ChannelChart({
+  channelDataByPeriod,
+}: {
+  channelDataByPeriod: Record<ChannelPeriod, ChannelDatum[]>
+}) {
   const [period, setPeriod] = useState<ChannelPeriod>("30d")
   const data = channelDataByPeriod[period]
 

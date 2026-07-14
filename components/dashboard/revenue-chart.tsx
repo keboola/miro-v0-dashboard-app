@@ -16,7 +16,8 @@ import {
   type ChartConfig,
 } from "@/components/ui/chart"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
-import { revenueData } from "@/lib/dashboard-data"
+
+type RevenueDatum = { month: string; revenue: number; orders: number }
 
 const chartConfig = {
   revenue: {
@@ -37,7 +38,7 @@ const rangeMonths = {
 
 type Range = keyof typeof rangeMonths
 
-export function RevenueChart() {
+export function RevenueChart({ revenueData }: { revenueData: RevenueDatum[] }) {
   const [range, setRange] = useState<Range>("12m")
   const data = revenueData.slice(-rangeMonths[range])
 

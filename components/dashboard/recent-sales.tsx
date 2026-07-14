@@ -6,9 +6,15 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { recentSales } from "@/lib/dashboard-data"
 
-export function RecentSales() {
+type Sale = {
+  name: string
+  email: string
+  amount: string
+  initials: string
+}
+
+export function RecentSales({ recentSales }: { recentSales: Sale[] }) {
   return (
     <Card className="xl:col-span-2">
       <CardHeader>

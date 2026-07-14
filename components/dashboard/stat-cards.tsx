@@ -1,9 +1,16 @@
 import { TrendingUp, TrendingDown } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
-import { stats } from "@/lib/dashboard-data"
 
-export function StatCards() {
+type Stat = {
+  label: string
+  value: string
+  change: string
+  trend: string
+  hint: string
+}
+
+export function StatCards({ stats }: { stats: Stat[] }) {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
       {stats.map((stat) => {
